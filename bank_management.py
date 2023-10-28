@@ -108,7 +108,7 @@ class Admin:
         self.password = password
     def create_user_account(self,bank,name,email,ac_type,password):
         new_user = Account_holder(name,email,ac_type,password)
-        self.bank.users.append(new_user)
+        bank.users.append(new_user)
         
         print(f"Account for {name} created successfully")
         return new_user
@@ -199,10 +199,10 @@ while True:
         ac_no = int(input("Enter Account Number: "))
         password =  int(input("Enter Account holder password: "))
         #print(ac_no,password)
-        Account_holder = None
+        user_account = None
         for user in brac.users:
             #print("Hello",user.ac_no)
-            Account_holder = user
+            user_account = user
             if user.ac_no== ac_no:
                 print("User Successfully Log In")
                 while True:
@@ -216,21 +216,21 @@ while True:
                     choice = input('Enter Choice:')
                     if choice == "1":
                         amount = float(input("Enter the amount to deposit:"))
-                        Account_holder.deposit(brac,amount)
+                        user_account .deposit(brac,amount)
                     elif choice == "2":
                         amount = float(input("Enter the amount to Withdraw:"))
-                        Account_holder.withdraw(brac,amount)
+                        user_account .withdraw(brac,amount)
                     elif choice == "3":
-                        Account_holder.check_balance()
+                        user_account .check_balance()
                     elif choice== "4":
-                        Account_holder.view_transaction_history()
+                       user_account .view_transaction_history()
                     elif choice == "5":
                         amount = float(input("Enter the loan amount :"))
-                        Account_holder.take_loan(brac,amount)
+                        user_account .take_loan(brac,amount)
                     elif choice == "6":
                         receiver_ac_no = int(input("Enter receiver account no:" ))
                         amount = float(input("Enter the amount to transfer:"))
-                        Account_holder.transfer_money(brac,amount,receiver_ac_no)
+                        user_account .transfer_money(brac,amount,receiver_ac_no)
                     elif choice == "7":
                         print("logged out")
                         break
@@ -242,6 +242,46 @@ while True:
         print("Enter valid option")
                     
 
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+        
+
+            
+        
+
+        
+
+
+
+   
+   
+         
+       
+                 
+
+
+                  
+     
 
 
         
